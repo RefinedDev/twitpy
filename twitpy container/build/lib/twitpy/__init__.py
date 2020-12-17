@@ -71,7 +71,3 @@ class accesstwitpy():
             return self
         except:
             print("HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys")
-
-access = accesstwitpy("1204782674663002113-Q9j4sXuZaE6UCp5x7H8fTfJRoxv81p","531AQWa3VtVtXdTGfeTAlwKPTIB7wD83sOR7FgwZtsj7C","TpspAUJsIrzeMTvSgt4aL86WY","5VnP1o1YIjI9fN9iAYRaZcm4hkcAUDWhqteExNo9cn5Z1W25dI")
-b =  access.get_tweetsfromuser("FortniteGame",1)
-print(dir(b[0]))
