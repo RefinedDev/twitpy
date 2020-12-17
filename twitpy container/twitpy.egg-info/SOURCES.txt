@@ -1,0 +1,7 @@
+README.md
+setup.py
+twitpy/__init__.py
+twitpy.egg-info/PKG-INFO
+twitpy.egg-info/SOURCES.txt
+twitpy.egg-info/dependency_links.txt
+twitpy.egg-info/top_level.txt
