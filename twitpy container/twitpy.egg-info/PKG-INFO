@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: twitpy
-Version: 0.0.2
+Version: 0.0.1
 Summary: A package based on the twitter api, search users of twitter and MORE!.
 Home-page: UNKNOWN
 License: UNKNOWN
@@ -52,7 +52,7 @@ Description: # Setup twitpy
         for i in gettweets:
             print(i.full_text)
         ```
-        In the parenthesis of `get_tweetsfromuser` we write the Username first then we write the amount of tweets we want from the user, the number of tweets should be under 10,because `gettweets` was a list due to having 10 tweets it has to be looped through., `get_tweetsfromuser` returns the following attributes.
+        In the parenthesis of `get_tweetsfromuser` we write the Username first then we write the amount of tweets we want from the user, the number of tweets should be under 10,because `gettweets` was a list due to having 10 tweets it has to be looped through, `get_tweetsfromuser` returns the following attributes.
         
         ```
         full_text

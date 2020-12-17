@@ -46,7 +46,7 @@ gettweets = Access.get_tweetsfromuser("OHrefineddev",10)
 for i in gettweets:
     print(i.full_text)
 ```
-In the parenthesis of `get_tweetsfromuser` we write the Username first then we write the amount of tweets we want from the user, the number of tweets should be under 10,because `gettweets` was a list due to having 10 tweets it has to be looped through., `get_tweetsfromuser` returns the following attributes.
+In the parenthesis of `get_tweetsfromuser` we write the Username first then we write the amount of tweets we want from the user, the number of tweets should be under 10,because `gettweets` was a list due to having 10 tweets it has to be looped through, `get_tweetsfromuser` returns the following attributes.
 
 ```
 full_text
