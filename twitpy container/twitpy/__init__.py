@@ -7,7 +7,6 @@ from tweepy import Stream
 import os
 import random
 
-
 class _TwitterAuthenticator():
     class Login():
         def __init__(self,ac_tok = None, ac_tok_sec = None,con_tok = None,con_tok_sec = None):
@@ -30,7 +29,7 @@ class accesstwitpy():
         self.__d = __consumer_key_secret
         self.__api = _TwitterAuthenticator().Login(self.__a,self.__b,self.__c,self.__d).authenticate_twitter_app()
 
-    def pick_user_from_retweet(self,id):
+    def pickuserfrom_retweet(self,id):
             try:
                 res = self.__api.retweeters(id)
                 choose = random.choice(res)
@@ -44,7 +43,7 @@ class accesstwitpy():
             except:
                 print('HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys') 
         
-    def get_tweets_from_user(self,name,count):
+    def get_tweetsfromuser(self,name,count):
         try:
             if count < 11:
                 tweets = self.__api.user_timeline(screen_name=name,count= count, tweet_mode = 'extended')  
@@ -73,6 +72,6 @@ class accesstwitpy():
         except:
             print("HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys")
 
-
-# "TpspAUJsIrzeMTvSgt4aL86WY","5VnP1o1YIjI9fN9iAYRaZcm4hkcAUDWhqteExNo9cn5Z1W25dI"
-# "1204782674663002113-Q9j4sXuZaE6UCp5x7H8fTfJRoxv81p","531AQWa3VtVtXdTGfeTAlwKPTIB7wD83sOR7FgwZtsj7C"
+access = accesstwitpy("1204782674663002113-Q9j4sXuZaE6UCp5x7H8fTfJRoxv81p","531AQWa3VtVtXdTGfeTAlwKPTIB7wD83sOR7FgwZtsj7C","TpspAUJsIrzeMTvSgt4aL86WY","5VnP1o1YIjI9fN9iAYRaZcm4hkcAUDWhqteExNo9cn5Z1W25dI")
+b =  access.get_tweetsfromuser("FortniteGame",1)
+print(dir(b[0]))
