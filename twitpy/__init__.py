@@ -41,8 +41,8 @@ class accesstwitpy():
                 self.followers = res2.followers_count
                 self.following = res2.friends_count
                 return self
-            except:
-                raise HTTP404Error('HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys')
+            except Exception as e:
+                raise HTTP404Error(f"An Error Occured: {e}")
 
     def get_tweetsfromuser(self,name,count):
         try:
@@ -52,7 +52,7 @@ class accesstwitpy():
             else:
                 raise Error("You cannot fetch more than 10 tweets from a user.")
         except Exception as e:
-            raise HTTP404Error(f"An error occured while trying to find the user: {e} Or Invalid API Keys")
+            raise HTTP404Error(f"An Error Occured: {e}")
             
     def find_user(self,name):
         try:
@@ -71,14 +71,14 @@ class accesstwitpy():
             self.avatar_url = result.profile_image_url
             return self
         except Exception as e:
-            raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
+            raise HTTP404Error(f"An Error Occured: {e}")
         
     def retweet_tweet(self,id):
         try:
             api = self.__api
             api.retweet(id)
         except Exception as e:
-            raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
+            raise HTTP404Error(f"An Error Occured: {e}")
 
     def follow_user(self,name):
         try:
@@ -86,7 +86,7 @@ class accesstwitpy():
             res = api.get_user(name)
             res.follow()
         except Exception as e:
-              raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
+              raise HTTP404Error(f"An Error Occured: {e}")
     
     def send_dm(self,name,text):
         try:
@@ -95,20 +95,22 @@ class accesstwitpy():
             ID = res.id 
             api.send_direct_message(ID,text)
         except Exception as e:
-            raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
-
+            raise HTTP404Error(f"An Error Occured: {e}")
     
     def like_tweet(self,statusid):
         try:
             api = self.__api
             api.create_favorite(statusid)
         except Exception as e:
-            raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
+            raise HTTP404Error(f"An Error Occured: {e}")
     
     def unlike_tweet(self,statusid):
         try:
             api = self.__api
             api.destroy_favorite(statusid)
         except Exception as e:
-            raise HTTP404Error(f"HTTP Error 404: Not Found - Not Results Found Or Invalid API Keys: {e}")
+            raise HTTP404Error(f"An error occured: {e}")
+
+
+    
 
