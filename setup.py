@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="twitpy",
-    version="1.0.1",
+    version="1.0.3",
     description="A package based on the twitter api, search users of twitter and MORE!.",
     long_description=long_description,
     long_description_content_type="text/markdown",
