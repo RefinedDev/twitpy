@@ -21,10 +21,13 @@ class _Login():
         self.contoksec = con_tok_sec
 
     def authenticate_twitter_app(self):
-        auth = OAuthHandler(self.contok,self.contoksec)
-        auth.set_access_token(self.actok,self.actoksec)
-        self.twitter_client = API(auth)
-        return self.twitter_client
+        try:
+            auth = OAuthHandler(self.contok,self.contoksec)
+            auth.set_access_token(self.actok,self.actoksec)
+            self.twitter_client = API(auth)
+            return self.twitter_client
+        except Exception as e:
+            raise AuthenticationError(f'An error occured: {e}')
 
 class accesstwitpy():
     def __init__(self,__access_token,__access_token_secret,__consumer_key,__consumer_key_secret):
